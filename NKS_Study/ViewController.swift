@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var currentValue : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,10 +18,15 @@ class ViewController: UIViewController {
     
     @IBAction func showAlert() {
         // add alert
-        let alert = UIAlertController(title: "hello", message : "MY FIRST APP", preferredStyle: .alert)
+        let message = "\(currentValue)"
+        
+        let alert = UIAlertController(title: "hello", message : message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+        
+        let randomNum = arc4random_uniform(100000) + 1
+        currentValue = Int(randomNum)
     }
     
     @IBAction func showSecondAlert() {
