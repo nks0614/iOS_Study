@@ -10,14 +10,18 @@ import UIKit
 class ViewController: UIViewController {
     
     var currentValue : Int = 0
+    
+    @IBOutlet weak var bountyLabel : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        refreshNumber()
     }
     
     @IBAction func showAlert() {
         // add alert
+        refreshNumber()
         let message = "\(currentValue)"
         
         let alert = UIAlertController(title: "hello", message : message, preferredStyle: .alert)
@@ -25,8 +29,7 @@ class ViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
         
-        let randomNum = arc4random_uniform(100000) + 1
-        currentValue = Int(randomNum)
+        
     }
     
     @IBAction func showSecondAlert() {
@@ -34,6 +37,12 @@ class ViewController: UIViewController {
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func refreshNumber() {
+        let randomNum = arc4random_uniform(100000) + 1
+        currentValue = Int(randomNum)
+        bountyLabel.text = "\(currentValue)"
     }
 
 
