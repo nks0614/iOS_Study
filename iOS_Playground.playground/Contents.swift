@@ -69,8 +69,74 @@ import Foundation
 //for i in range {
 //    signValue = sin(CGFloat.pi / 4 * CGFloat(i))
 //}
+//
+//for i in 0...10 where i % 2 == 0 {
+//    print(i)
+//}
+//
+//let num = 10
+//
+//switch num {
+//case 0:
+//    print("0입니다.")
+//case 0...10:
+//    print("0에서 20 사이의 수") // 조건이 여러 개 맞아도 선행 조건을 실행후 종료
+//case 10:
+//    print("10입니다.")
+//default:
+//    print("다른 무언가")
+//}
 
-for i in 0...10 where i % 2 == 0 {
-    print(i)
+//let num = 5
+//switch num {
+//case _ where num % 2 == 0: // 이렇게 where로 조건을 추가할 수 있다.
+//    print("짝수입니다.")
+//default:
+//    print("홀수입니다.")
+//}
+//
+//let coord = (x: 0, y: 4)
+//
+//switch coord {
+//case (0, 0):
+//    print("0,0")
+//case (let x, 0):
+//    print("\(x)")
+//case(0, let y):
+//    print("\(y)")
+//default:
+//    print("어딘가에 있음")
+//}
+
+func printName() {
+    print("My name is Hello")
 }
 
+printName()
+
+
+enum Word {
+    case steve(String, Int)
+    case bob(String)
+}
+
+let word = Word.steve("steve1", 1)
+
+//switch word {
+//case let .steve(nickName, id):
+//    print(nickName)
+//    print("id: \(id)")
+//case let .bob(nickName):
+//    print(nickName)
+//}
+
+func word(_ type: Word) -> String {
+    switch type {
+    case .bob(let nickName):
+        return nickName
+    case let .steve(nickName, id):
+        return "\(nickName) \(id)"
+    }
+}
+
+print(word(word))
