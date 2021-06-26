@@ -11,12 +11,23 @@ class BountyViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     let photoList = ["IMG_1633", "IMG_1634", "IMG_1635", "IMG_1637", "IMG_1640", "IMG_1643"]
     let nameList = ["냠냠 김영재", "수풀 삼총사", "마네키네코 김동희", "자기야 왜 칭얼거려 김동희", "미안해요 영감 양준혁", "[권능 : 지배] 김근훈"]
-    let bountyList = [50000, 3000, 200000, 300000, 120000, 2340000]
+    let bountyList = [500000, 3000, 200000, 300000, 120000, 2340000]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination as? DetailViewController
+            if let index = sender as? Int {
+                vc?.name = nameList[index]
+                vc?.photo = photoList[index]
+                vc?.bounty = bountyList[index]
+            }
+        }
     }
     
     // 몇개를 보여줄까?
@@ -45,6 +56,7 @@ class BountyViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("---->\(indexPath.row)")
+        performSegue(withIdentifier: "showDetail", sender: indexPath.row)
     }
     
 }

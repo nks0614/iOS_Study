@@ -79,10 +79,73 @@
                             <constraint firstItem="dfw-3D-4lF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bjU-6s-yxN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Gmw-cS-JMm" kind="presentation" identifier="showDetail" id="JBn-jw-MSp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="BXu-gW-xnu">
+            <objects>
+                <viewController id="Gmw-cS-JMm" customClass="DetailViewController" customModule="BountyList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hZu-yc-q7N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMK-0m-Mh3">
+                                <rect key="frame" x="344" y="2" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4ZG-RZ-k35"/>
+                                    <constraint firstAttribute="width" constant="50" id="tr4-fa-VyT"/>
+                                </constraints>
+                                <state key="normal" title="닫기"/>
+                                <connections>
+                                    <action selector="close:" destination="Gmw-cS-JMm" eventType="touchUpInside" id="gfj-ap-9fV"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eiR-M1-3d7">
+                                <rect key="frame" x="30" y="80" width="354" height="505.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eiR-M1-3d7" secondAttribute="height" multiplier="7:10" id="U5h-wR-xwa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDh-ZW-NZD">
+                                <rect key="frame" x="57" y="606" width="300" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cme-oi-Be8">
+                                <rect key="frame" x="57" y="687" width="300" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fZC-n3-wvl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fZC-n3-wvl" firstAttribute="trailing" secondItem="eiR-M1-3d7" secondAttribute="trailing" constant="30" id="O3q-hg-0fe"/>
+                            <constraint firstItem="eiR-M1-3d7" firstAttribute="leading" secondItem="fZC-n3-wvl" secondAttribute="leading" constant="30" id="RBg-ab-WJR"/>
+                            <constraint firstItem="gMK-0m-Mh3" firstAttribute="top" secondItem="fZC-n3-wvl" secondAttribute="top" constant="20" id="SoT-pF-adv"/>
+                            <constraint firstItem="eiR-M1-3d7" firstAttribute="top" secondItem="fZC-n3-wvl" secondAttribute="top" constant="80" id="eDH-0V-Cym"/>
+                            <constraint firstItem="fZC-n3-wvl" firstAttribute="trailing" secondItem="gMK-0m-Mh3" secondAttribute="trailing" constant="15" id="gPm-Hd-yMM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bountyLabel" destination="cme-oi-Be8" id="bD4-f4-COm"/>
+                        <outlet property="imgView" destination="eiR-M1-3d7" id="nZu-Ie-ilf"/>
+                        <outlet property="nameLabel" destination="bDh-ZW-NZD" id="KAY-rQ-wtY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcD-zQ-N7z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="112"/>
         </scene>
     </scenes>
     <resources>
