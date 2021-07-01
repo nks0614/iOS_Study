@@ -5,6 +5,6 @@ swift 언어와 iOS의 기초를 공부하는 레포지토리입니다.
 
 
 
-TableView를 활용한 현상금 리스트 앱
+TableView를 활용한 현상금 리스트 앱 - TableView
 
-WebView로 간단한 브라우저 만들기
+WebView로 간단한 브라우저 만들기 - WebView
