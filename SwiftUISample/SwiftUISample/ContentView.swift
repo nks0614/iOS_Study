@@ -16,15 +16,29 @@ import SwiftUI // 프레임워크를 가져오고
 // 약간 react 느낌의 state 관리라고 보면 쉽게 이해할 수 있을 듯
 // State 어노테이션이 붙은 변수에 변경이 일어나게 되면 자동으로 View를 렌더링함.
 struct ContentView: View {
-    @State var count = 0
+    
+    let genderType = ["남성", "여성", "기타"]
+    
+    @State var name = ""
+    @State var gender = 0
+    @State var bornIn = 0
     var body: some View {
         NavigationView{
             Form{
-                Text("버튼을 클릭한 횟수 : \(count)")
-                Button("This is Button!"){
-                    self.count += 1
+                Section(header:Text("이름")){
+                    TextField("이름을 입력해주세요.", text:$name)
+                        .keyboardType(/*@START_MENU_TOKEN@*/.default/*@END_MENU_TOKEN@*/)
                 }
-            }
+                
+                Section(header:Text("생년월일")){
+                    Picker("출생년도",selection:$bornIn){
+                        ForEach(1900 ..< 2021){
+                            Text("\(String($0))")
+                        }
+                    }
+                }
+                
+            }.navigationTitle("회원가입")
         }
     }
 }
