@@ -32,6 +32,13 @@ struct ContentView: View {
     }
     
     var body: some View {
+        
+//        ZStack{
+//            Color.yellow.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+//            Color.red.frame(width:300, height:300)
+//            Color.blue.frame(width:100, height:100)
+//        }
+        
         NavigationView{
             Form{
                 Section(header:Text("이름")){
@@ -57,6 +64,23 @@ struct ContentView: View {
                 
                 Section(header:Text("결과")){
                     Text("\(result)")
+                }
+                
+                Section(header:Text("Stack")){
+                    HStack{
+                        Text("Hello")
+                        Text("Hello")
+                        Text("Hello")
+                    }.background(Color.red)
+                    
+                    VStack(alignment: .leading){
+                        Text("Hello")
+                        Spacer()
+                        Text("Hello")
+                        Spacer().frame(height:10)
+                        Text("Hello")
+                    }.background(Color.blue)
+                
                 }
             }.navigationTitle("회원가입")
         }
