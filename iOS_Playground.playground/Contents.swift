@@ -108,19 +108,19 @@ import Foundation
 //    print("어딘가에 있음")
 //}
 
-func printName() {
-    print("My name is Hello")
-}
-
-printName()
-
-
-enum Word {
-    case steve(String, Int)
-    case bob(String)
-}
-
-let word = Word.steve("steve1", 1)
+//func printName() {
+//    print("My name is Hello")
+//}
+//
+//printName()
+//
+//
+//enum Word {
+//    case steve(String, Int)
+//    case bob(String)
+//}
+//
+//let word = Word.steve("steve1", 1)
 
 //switch word {
 //case let .steve(nickName, id):
@@ -130,13 +130,41 @@ let word = Word.steve("steve1", 1)
 //    print(nickName)
 //}
 
-func word(_ type: Word) -> String {
-    switch type {
-    case .bob(let nickName):
-        return nickName
-    case let .steve(nickName, id):
-        return "\(nickName) \(id)"
-    }
-}
+//func word(_ type: Word) -> String {
+//    switch type {
+//    case .bob(let nickName):
+//        return nickName
+//    case let .steve(nickName, id):
+//        return "\(nickName) \(id)"
+//    }
+//}
+//
+//print(word(word))
 
-print(word(word))
+//func helloGenerator(_ message : String) -> (String) -> String {
+//    func hello(_ name: String) -> String {
+//        return name + message
+//    }
+//
+//    return hello
+//} // 함수 안에 함수 선언도 되고 반환도 됨.
+//
+//let hello = helloGenerator("님 안녕하세요!") // 이렇게 사용 가능함.
+//hello("남규석")
+//
+//func helloGenerator2(_ message: String) -> (String, String) -> String {
+//    return {  // 클로져 Closure. 중괄호로 감싸진 '실행 가능한 코드 블럭'
+//        return $1 + $0 + message
+//    }
+//}
+
+//let hello2: (String, String) -> String = { $1 + $0 + "님 안녕하세요!" }
+//hello2("규석", "남")
+
+// Closeure 활용하기
+let arr1 = [1, 3, 5, 4, 8, 9]
+let arr2 = arr1.map {$0 * 2}
+print(arr2)
+let sum = arr1.reduce(0) { $0 + $1 }
+arr1.reduce(0, +) // 똑같은 방식 
+print(sum)
