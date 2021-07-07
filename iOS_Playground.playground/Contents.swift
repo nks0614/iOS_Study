@@ -162,9 +162,11 @@ import Foundation
 //hello2("규석", "남")
 
 // Closeure 활용하기
-let arr1 = [1, 3, 5, 4, 8, 9]
-let arr2 = arr1.map {$0 * 2}
-print(arr2)
-let sum = arr1.reduce(0) { $0 + $1 }
-arr1.reduce(0, +) // 똑같은 방식 
-print(sum)
+//let arr1 = [1, 3, 5, 4, 8, 9]
+//let arr2 = arr1.map {$0 * 2}
+//print(arr2)
+//let sum = arr1.reduce(0) { $0 + $1 }
+//arr1.reduce(0, +) // 똑같은 방식
+//print(sum)
+
+
