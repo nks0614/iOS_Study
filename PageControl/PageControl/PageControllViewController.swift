@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PageControllViewController: UIViewController {
     
     var images = ["IMG_1633.PNG","IMG_1634.PNG","IMG_1635.PNG","IMG_1637.PNG","IMG_1640.PNG","IMG_1643.PNG"]
 
