@@ -16,6 +16,8 @@ MapView를 활용한 간단한 지도 만들기 - MapView
 
 Page Control을 이용한 사진 앱 만들기 - page control
 
+Tab Bar를 활용한 앱 만들기 ( Android 로 치면 Bottom Navigation 느낌 )
+
 <br/>
 <b>*SwiftUI*</b>
 
