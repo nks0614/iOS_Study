@@ -1,0 +1,6 @@
+framework module RxTexture2 {
+  umbrella header "RxTexture2-umbrella.h"
+
+  export *
+  module * { export * }
+}
